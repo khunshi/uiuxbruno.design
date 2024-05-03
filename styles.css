@@ -17,7 +17,7 @@
     opacity: 0px;
     z-index: -100;
     background: radial-gradient(50% 50% at 50% 50%, rgba(158, 77, 248, 0.15) 0%, rgba(158, 77, 248, 0) 100%);
-
+    overflow: hidden;
 }
 
 body {
@@ -144,7 +144,6 @@ header object {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0px 0px 100px rgba(134,38,240,1);
 }
 
 .work {
