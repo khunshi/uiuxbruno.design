@@ -1,23 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes gradientChange {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
 :root {
-    --roxo: #8626F0;
-    --roxoEscuro: #6B0ED2;
-    --branco: #f7f4fb;
-    --preto: #000000;
-}
-
-
-.glow {
-    position: absolute;
-    width: 2000px;
-    height: 1200px;
-    top: -300px;
-    left: 10px;
-    gap: 0px;
-    opacity: 0px;
-    z-index: -100;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(158, 77, 248, 0.15) 0%, rgba(158, 77, 248, 0) 100%);
-    overflow: hidden;
+    --roxo: #7F00FD;
+    --roxoEscuro: #6600CC;
+    --branco: #FEFFF9;
+    --preto: #101114;
+    --brancoEscuro: #E5E5E5;
+    --pretoClaro: #17181C;
 }
 
 body {
@@ -32,43 +41,58 @@ body {
     cursor: default;
 }
 
-header {
-    padding: 1em 5em;
-    width: auto;
-    top: 0;
+.home {
+    height: 95vh;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 1em;
+    background: radial-gradient(ellipse at center, rgba(128, 0, 255, 0.4) 0%, rgba(16, 17, 20, 1) 70%);
+    background-size: 150% 100%;
+    background-position: 50% 50%;
+    position: relative;
+    z-index: 1
 }
 
-header object {
-    height: 24px;
+.arrow-down {
+    height: 16px;
+    width: 16px;
+    fill: var(--branco);
+}
+
+.animation-fade {
+    animation: fade 3s infinite;
 }
 
 .about-me {
-    margin: 5em;
     display: flex;
     flex-direction: column;
     gap: 1em;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
-
 .about-me h1 {
     line-height: 1em;
-    font-size: 4em;
+    font-size: 72px;
     font-weight: 400;
     margin: 0;
+    text-align: center;
 }
 
 .about-me h2 {
     opacity: 1;
     line-height: 1em;
-    font-weight: 400;
+    font-weight: 250;
     margin: 0;
+    text-align: center;
+    color: var(--branco);
 }
 
 .primary-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1em;
     font-weight: 400;
     color: var(--branco);
@@ -78,9 +102,7 @@ header object {
     border-radius: 2em;
     height: 48px;
     cursor: pointer;
-    box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
-    -webkit-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
-    -moz-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
+    font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .about-btns {
@@ -95,15 +117,15 @@ header object {
 
 .primary-btn:hover {
     transition: 400ms;
-    background-color: var(--roxo);
     cursor: pointer;
-    box-shadow:
-    0px 0px 10.9px 0px rgba(158, 77, 248, 1),
-    0px 0px 38.14px 0px rgba(158, 77, 248, 1),
-    0px 0px 76.27px 0px rgba(158, 77, 248, 1);
+    background-color: var(--roxo);
+        box-shadow:
+    0px 0px 10.9px 0px rgba(158, 77, 248, .5),
+    0px 0px 49.14px 0px rgba(158, 77, 248, .5),
+    0px 0px 110.27px 0px rgba(158, 77, 248, .5);
 }
 
-.secundary-btn {
+.social-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,70 +135,100 @@ header object {
     height: 48px;
     width: 48px;
     cursor: pointer;
-    box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
-    -webkit-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
-    -moz-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
-    
 }
 
-.secundary-btn svg {
+.social-btn svg {
     width: 24px;
     height: 24px;
     fill: var(--roxo);
 }
 
-.secundary-btn:hover {
+.social-btn:hover {
     transition: 400ms;
     background-color: var(--roxo);
     border: none;
     box-shadow:
-        0px 0px 10.9px 0px rgba(158, 77, 248, 1),
-        0px 0px 38.14px 0px rgba(158, 77, 248, 1),
-        0px 0px 76.27px 0px rgba(158, 77, 248, 1);
+    0px 0px 10.9px 0px rgba(158, 77, 248, .5),
+    0px 0px 49.14px 0px rgba(158, 77, 248, .5),
+    0px 0px 110.27px 0px rgba(158, 77, 248, .5);
 }
 
-.secundary-btn:hover svg {
+.social-btn:hover svg {
     fill: var(--branco);
 }
 
 .highlight {
-    background-image: linear-gradient(to left, #8626F0, #6B0ED2);
+    background-image: linear-gradient(to left, #7F00FD, #9933FF);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .work {
-    padding: 5em;
+    margin: 10em;
 }
 
-.work h1 {
+#workTitle {
     margin-top: 0;
-    font-weight: normal;
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 64px;
 }
 
 .work-cards {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 1em;
+    gap: 96px;
 }
 
 .card {
     width: 100%;
-    aspect-ratio: 1/1;
-    background-color: var(--preto);
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.cardDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 24px;
+}
+
+.cardDesc h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 48px;
+}
+
+.cardDesc p {
+    font-size: 18px;
 }
 
 #card-seene {
     background-image: url(./assets/imgs/seene.png);
     background-size: cover;
+    width: 740px;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+    
 }
 
 #card-komer {
     background-image: url(./assets/imgs/komer.png);
     background-size: cover;
+    width: 740px;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+    border: none;
+    transition: 400ms;
 }
 
 #card-wysin {
@@ -185,17 +237,35 @@ header object {
 }
 
 .card:hover {
-    transform: scale(1.025);
-    transition: 400ms;
+    background-color: var(--roxo);
+    transition: 200ms;
+    box-shadow:
+    0px 0px 10.9px 0px rgba(158, 77, 248, .5),
+    0px 0px 49.14px 0px rgba(158, 77, 248, .5),
+    0px 0px 110.27px 0px rgba(158, 77, 248, .5);
+    scale: 1.02;
+}
+
+.card:hover #card-komer {
+    background-image: url(./assets/imgs/komer.png);
 }
 
 .skills {
-    margin: 5em;
+    margin: 10em;
 }
 
 .skills h1 {
     font-weight: 400;
     margin-top: 0;
+    font-size: 32px;
+}
+
+#skillsTitle {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 64px;
 }
 
 .skills-cards {
@@ -211,12 +281,9 @@ header object {
     justify-content: center;
     align-items: flex-start;
     padding: 2em;
-    background-color: var(--roxo);
+    background-color: var(--pretoClaro);
     width: 100%;
     border-radius: 2em;
-    box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
--webkit-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
--moz-box-shadow: 0px 0px 96px 6px rgba(134,38,240,0.4);
 }
 
 .skill-card:hover {
@@ -230,10 +297,10 @@ header object {
 }
 
 
-.skill-card p {
+.card-body p {
     margin-bottom: 0;
-    font: 1em;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .card-header {
@@ -250,7 +317,144 @@ header object {
 }
 
 .card-header svg {
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     color: var(--branco);
 }
+
+#contactTitle {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.contact-options {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.options h1{
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    margin-top: 12px;   
+}
+
+.options span {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.options svg {
+    height: 24px;
+    fill: var(--branco);
+}
+
+.contact-type {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--pretoClaro);
+    padding: 1em;
+    border-radius: 2em;
+    width: 420px;
+    gap: 1em;
+}
+
+.options:hover {
+    transform: scale(1.02);
+    transition: 400ms;
+    background-color: var(--roxo);
+    box-shadow:
+    0px 0px 10.9px 0px rgba(158, 77, 248, .5),
+    0px 0px 49.14px 0px rgba(158, 77, 248, .5),
+    0px 0px 110.27px 0px rgba(158, 77, 248, .5);
+}
+
+.options:hover .primary-contact-btn{
+    color: var(--branco);
+    background-color: var(--branco);
+    color: var(--roxo);
+}
+
+.options:hover .primary-contact-btn:hover{
+    background-color: var(--brancoEscuro);
+}
+
+.options:hover .secundary-btn {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.options:hover .secundary-btn:hover {
+    background-color: var(--roxoEscuro);
+}
+
+.contact-btns {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.primary-contact-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--branco);
+    background-color: var(--roxo);
+    height: 48px;
+    border-radius: 2em;
+    border: none;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    transition: 200ms;
+}
+
+.secundary-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--branco);
+    background-color: var(--pretoClaro);
+    border: none;
+    height: 48px;
+    border-radius: 2em;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    transition: 200ms;
+}
+
+.secundary-btn:hover {
+    background-color: #23242A;
+}
+
+.contact-container {
+    margin: 10em;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+}   
