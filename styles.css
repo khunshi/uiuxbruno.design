@@ -91,7 +91,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background: radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 70%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 50%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.3) 0%, rgba(16, 17, 20, 1) 30%);
+    background: radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 70%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 50%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.01) 0%, rgba(16, 17, 20, 1) 30%);
     background-size: 150% 100%;
     background-position: 50% 50%;
     position: relative;
