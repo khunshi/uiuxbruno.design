@@ -91,7 +91,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background: radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 70%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 50%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.4) 0%, rgba(16, 17, 20, 1) 30%);
+    background: radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 70%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.2) 0%, rgba(16, 17, 20, 1) 50%), radial-gradient(ellipse at center, rgba(128, 0, 255, 0.3) 0%, rgba(16, 17, 20, 1) 30%);
     background-size: 150% 100%;
     background-position: 50% 50%;
     position: relative;
@@ -242,6 +242,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 96px;
+
 }
 
 .card {
@@ -252,6 +253,7 @@ body {
     border-radius: 2em;
     padding: 1em;
     height: 300px;
+    background-color: var(--pretoClaro);
 }
 
 .invertido {
